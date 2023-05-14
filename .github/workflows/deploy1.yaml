@@ -1,7 +1,7 @@
 name: Deployment 1
 on: push
 jobs:
-  deploymenet:
+  deployment:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
