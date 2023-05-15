@@ -32,9 +32,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Get Code
-        uses: actions/checkout@v3
-      - name: Install Depedencies
-        run: npm ci
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+        with: dist-files
+      - name: Output Contents
+        run: ls
       - name: Deploy
         run: echo "Deploying..."
