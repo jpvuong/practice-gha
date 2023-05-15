@@ -34,7 +34,8 @@ jobs:
     steps:
       - name: Download Artifacts
         uses: actions/download-artifact@v3
-        with: dist-files
+        with:
+          name: dist-files
       - name: Output Contents
         run: ls
       - name: Deploy
