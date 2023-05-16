@@ -46,6 +46,8 @@ jobs:
           name: dist-files
           path: dist
   deploy:
+    env:
+      SOME_SECRET: ${{ secrets.SOME_SECRET }}
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -58,4 +60,4 @@ jobs:
       - name: Output JS filename
         run: echo "${{ needs.build.outputs.script-file }}"
       - name: Deploy
-        run: echo "Deploying..."
+        run: echo "Deploying... $SOME_SECRET"
