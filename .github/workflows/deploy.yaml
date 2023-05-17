@@ -4,6 +4,9 @@ env:
   USERNAME: jpvuong
 jobs:
   lint-test:
+    environment: testing
+    env:
+      SOME_SECRET: ${{ secrets.SOME_SECRET }}
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -19,6 +22,8 @@ jobs:
         run: npm run lint
       - name: Test
         run: npm run test
+      - name: Output environment secret
+        run: echo "environment secret $SOME_SECRET"
   build:
     needs: lint-test
     runs-on: ubuntu-latest
