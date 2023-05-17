@@ -1,7 +1,8 @@
 name: Pull request
 on:
   pull_request:
-    types: opened
+    types:
+      - opened
 jobs:
   on-pull-request:
     runs-on: ubuntu-latest
